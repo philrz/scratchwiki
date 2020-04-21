@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Upload Documentation to Wiki
-        uses: philrz/github-wiki-publish-action
+        uses: philrz/github-wiki-publish-action@v1
         with:
           path: "docs"
         env:
