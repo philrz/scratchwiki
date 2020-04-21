@@ -5,4 +5,4 @@ effective use of the Brim desktop application and related tools.
 
 ## Support Resources
 * [[Troubleshooting]]
-* [[Microsoft Windows beta]]
+* [[Microsoft Windows beta limitations]]

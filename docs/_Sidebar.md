@@ -1,3 +1,3 @@
 **Support Resources**
 * [[Troubleshooting]]
-* [[Microsoft Windows beta]]
+* [[Microsoft Windows beta limitations]]
