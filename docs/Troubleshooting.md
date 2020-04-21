@@ -121,13 +121,13 @@ the problem, but have not triggered it yet. Then from the menu bar, select
 **View > Toggle Developer Tools**. This will reveal a new panel on the right
 side of the app window, as outlined in red below.
 
-![Opening Developer Tools](docs/media/Open_Dev_Tools.png)
+![Opening Developer Tools](media/Open_Dev_Tools.png)
 
 Once the panel is revealed, inside it first click to the **Console** tab, then
 click the circle with the line through it to clear the console of any existing
 messages.
 
-![Preparing Developer Tools](docs/media/Prep_Dev_Tools.png)
+![Preparing Developer Tools](media/Prep_Dev_Tools.png)
 
 Now perform the operation in the app that triggers the problem. Hopefully this
 will reveal some error messages in the **Console** area of the panel. If this
