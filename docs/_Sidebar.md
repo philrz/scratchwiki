@@ -1,4 +1,4 @@
 **Support Resources**
 * [[Troubleshooting]]
 * [[Microsoft Windows beta limitations]]
-* [[Zeek JSON Import.md]]
+* [[Zeek JSON Import]]
