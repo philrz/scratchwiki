@@ -3,9 +3,9 @@
 * [[Microsoft Windows beta limitations]]
 * [[Troubleshooting]]
 
-** User Documentation**
+**User Documentation**
 * [[Zeek JSON Import]]
 * [[Zeek Customization]]
 
-** Developer Resources**
+**Developer Resources**
 * [[Code Base Walkthrough]]
