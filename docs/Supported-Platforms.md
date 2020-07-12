@@ -16,14 +16,12 @@ automated test infrastructure.
 
 The sections below describe the details regarding the versions we test with
 continuously as well as occasional ad hoc testing. We welcome you to
-[open an issue](./Troubleshooting#opening-an-issue) on any problem you
-experience with Brim regardless of platform verison, but please understand
+[open an issue](https://github.com/brimsec/brim/wiki/Troubleshooting#opening-an-issue) on any problem you
+experience with Brim regardless of platform version, but please understand
 that we may be limited in our ability to provide quick fixes (or any fix at
-all) for certain platforms, subject to availability.
+all) for some platform versions.
 
 # Per-Platform Details
-
-The following details are current as of Brim `v0.9.0`.
 
 ## Windows
 
@@ -36,7 +34,7 @@ Windows 10.
 Brim is written using tools that have their own platform limitations. Per the
 supported platform guidance for [Electron](https://www.electronjs.org/docs/tutorial/support#supported-platforms)
 and [Go](https://golang.org/doc/install#requirements), Windows versions
-_older_ _than_ Windows 7 or Windows Sevrer 2008R2 are not expected to work at
+_older_ _than_ Windows 7 or Windows Server 2008R2 are not expected to work at
 all.
 
 We've been informed anecdotally that users are running Brim successfully on
@@ -51,6 +49,9 @@ Windows Server 2019 or Windows 10, we may not be able to address them.
 Our macOS test automation runs on Catalina 10.15, and therefore this is
 the platform on which we are best able to ensure quality and prevent
 regressions.
+
+macOS versions prior to 10.14 will not be able import pcaps, as our builtin Zeek
+bundle for macOS relies on features first available in macOS 10.14.
 
 Brim is written using tools that have their own platform limitations. Per the
 supported platform guidance for [Electron](https://www.electronjs.org/docs/tutorial/support#supported-platforms) 
@@ -67,13 +68,9 @@ to address them.
 
 ## Linux
 
-Our Linux test automation runs on Ubuntu 18.04, and therefore this is
-the platform on which we are best able to ensure quality and prevent
-regressions.
-
-As we publish both `.deb` and `.rpm` installers, we do perform occasional ad
-hoc testing on Fedora to ensure the package installs and runs correctly on
-this RedHat-derived variant.
+Our Linux test automation runs on Ubuntu 18.04 (`.deb` package) and
+CentOS 8 (`.rpm` package), and therefore these are the platforms on which
+we are best able to ensure quality and prevent regressions.
 
 Brim is written using tools that have their own platform limitations. Per the
 supported platform guidance for [Electron](https://www.electronjs.org/docs/tutorial/support#supported-platforms)

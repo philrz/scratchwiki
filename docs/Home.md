@@ -8,3 +8,5 @@ effective use of the Brim desktop application and related tools.
 * [[Troubleshooting]]
 * [[Microsoft Windows beta limitations]]
 * [[Zeek JSON Import]]
+* [[Zeek Customization]]
+* [[Code Base Walkthrough]]
