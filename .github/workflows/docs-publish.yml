@@ -25,6 +25,8 @@ jobs:
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
 
   other-link-check:
+    runs-on: ubuntu-latest
+    steps:
     - name: check for broken links
       uses: ruzickap/action-my-broken-link-checker@v1
       with:
