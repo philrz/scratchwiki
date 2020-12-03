@@ -36,7 +36,7 @@ All React components used within the app.
 
 **/electron**
 
-Code intended to run in [Electron's main process](https://www.electronjs.org/docs/tutorial/application-architecture). Also contains the app's entry point, `src/js/electron/main.js`.
+Code intended to run in [Electron's main process](https://www.electronjs.org/docs/tutorial/quick-start#main-and-renderer-processes). Also contains the app's entry point, `src/js/electron/main.js`.
 
 **/errors**
 
@@ -84,7 +84,7 @@ Test helpers and test data. Actual unit tests should go next to the files they e
 
 **/types**
 
-A place for generic flow types that are used throughout the app. If you need to create a type that is specific to a component or a class, define and export it from here.
+A place for generic types that are used throughout the app. If you need to create a type that is specific to a component or a class, define and export it from here.
 
 **/zqd**
 
@@ -92,13 +92,13 @@ Code that runs the backend zqd process on localhost.
 
 ## Libraries
 
-We are an Electron app, so [electron](https://www.electronjs.org/docs) is the core library we use. For those unfamiliar, it's helpful to understand the [main vs renderer processes](https://www.electronjs.org/docs/tutorial/application-architecture) in an Electron app.
+We are an Electron app, so [electron](https://www.electronjs.org/docs) is the core library we use. For those unfamiliar, it's helpful to understand the [main vs renderer processes](https://www.electronjs.org/docs/tutorial/quick-start#main-and-renderer-processes) in an Electron app.
 
 Additionally, we rely heavily on the node modules listed here:
 
 **JavaScript**
 
-- [Flow Type Checker](https://flow.org/) Check for errors with `npm run flow`
+- [TypeScript](https://www.typescriptlang.org/) Check for errors with `npm run tsc`
 - [ESLint](https://eslint.org/) Check for errors with `npm run lint`
 - [Prettier](https://prettier.io/docs/en/index.html) All code must be formatted with `npm run format`
 
@@ -202,4 +202,4 @@ See the [[Adding Migrations]] page for a more detailed guide.
 
 ## Questions?
 
-We appreciate your interest in improving Brim. If you've got questions that aren't answered here or in the [video](#video), please join our [public Slack](https://join.slack.com/t/brimsec/shared_invite/zt-cy34xoxg-hZiTKUT~1KdGjlaBIuUUdg) workspace and ask!
+We appreciate your interest in improving Brim. If you've got questions that aren't answered here or in the [video](#video), please join our [public Slack](https://www.brimsecurity.com/join-slack/) workspace and ask!
