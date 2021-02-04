@@ -20,6 +20,41 @@ before you [open an issue](#opening-an-issue).
 
 ## I've clicked to open a packet capture in Brim, but it failed to open
 
+There are two different broad categories of such problems, one involving the
+application configured to open packet capture files and the other involving
+the packet captures themselves. The sections below describe each category in
+detail.
+
+### Application problems
+
+To start debugging such problems, it helps to understand how Brim opens flows
+extracted from pcaps. Once the 5-tuple, connection start time, and connection
+duration are isolated from the Zeek `conn` record for the flow, the
+[`zqd`](https://github.com/brimsec/zq/tree/master/ppl/cmd/zqd) process uses an
+index to extract the packets for the target flow into a temporary file. Once
+this temporary file has been written to the local filesystem, the application
+on your operating system that's configured to automatically open files ending
+in `.pcap` will be launched to open this file.
+
+In typical environments, that application will be Wireshark. However, if no
+such application is installed or configured to open `.pcap` files, clicking the
+**Packets** button in Brim will have no effect. The lack of guidance in this
+ case is currently lacking on macOS and Linux
+([brim/1379](https://github.com/brimsec/brim/issues/1379)).
+
+To fix this problem, ensure Wireshark or a similar utility is installed
+and that you can open `.pcap` files outside of Brim by double-clicking them
+in the general "files" utility for your operating system.
+
+Note that it would be a misconfiguration to set Brim itself as your operating
+system's default application for opening `.pcap` files, as this would make
+Brim's **Packets** button "point at itself".
+
+### Packet capture problems
+
+If you are able to open a pcap file in Wireshark but not extract flows from it
+in Brim, it's likely a problem unique to the packet capture itself. 
+
 Unfortunately, not all packet captures are created equal. The library that
 Brim invokes to extract flows from your pcap handles the most common variations
 we've encountered, but you may have come across a corner case that it wasn't
@@ -46,16 +81,22 @@ First, if you don't see an error message in Brim, or the error seems terse and
 unhelpful, it may help us get to the bottom of it faster if you include the
 debug info from [Developer Tools](#developer-tools).
 
-Beyond that, the most comprehensive way to debug is to use the
-[zq](https://github.com/brimsec/zq) toolset at the command line to perform
-steps that are functionally equivalent to those initiated by the Brim
-application to extract flows from your pcap. This will allow you to better
-observe the individual steps so you can report the point at which you see a
-failure. This consists of the following steps:
+Beyond that, the most comprehensive way to debug is to use a tool at the
+command line to perform steps that are functionally equivalent to those
+initiated by the Brim application to extract flows from your pcap. This will
+allow you to better observe the individual steps so you can report the point at
+which you see a failure. This consists of the following steps:
 
-1. Install the zq toolset by following the
-[installation steps in the zq README](https://github.com/brimsec/zq/blob/master/README.md#installation).
-Ensure you can run the `pcap` executable, which is needed for this exercise.
+1. Locate the `pcap` utility that's bundled with Brim. This binary can be
+found in the following location on each platform:
+
+   |**OS Platform**|**Location**|
+   |---------------|------------|
+   | **Windows**   | `%USERPROFILE%\AppData\Local\Brim\app-<version>\resources\app\zdeps` |
+   | **macOS**     | `/Applications/Brim.app/Contents/Resources/app/zdeps` |
+   | **Linux**     | `/usr/lib/brim/resources/app/zdeps`                   |
+
+
    ```
    $ pcap
    NAME
@@ -160,31 +201,21 @@ or [open an issue](#opening-an-issue) and we'll try to help.
 
 Though we attempt to fix bad bugs in Brim soon after they're identified,
 occasionally you may encounter a new bug that crashes the app in a way that
-leaves it in a bad state. In these situations Brim will seem "stuck" such that
-neither selecting the **Reset State**/**Reload** options from the drop-down
-menu nor restarting Brim will clear the situation. Here is an example of such
-a crash from previous issue [#652](https://github.com/brimsec/brim/issues/652),
-which has since been fixed:
+leaves it in a bad state. In these situations Brim will seem "stuck" each time
+it starts, either at at a blank white screen (such as in previously-fixed issue
+[#1099](https://github.com/brimsec/brim/issues/1099)) or showing an error dump
+similar to the one below:
 
-![Issue #652 Crash](media/Crash-652.png)
+![Example crash from issue #652](media/Crash-652.png)
 
-If you experience such a crash, please gather the error dump text and
+If you experience such a crash, please gather any error dump text and
 [open an issue](#opening-an-issue) with as much detail as possible regarding
 the steps you followed that led up to the crash.
 
-Then to clear the condition, exit Brim and delete the `appState.json` from
-your filesystem at the location shown below for your OS platform. Once deleted,
-restart Brim.
-
-|**OS Platform**|**Location**|
-|---------------|------------|
-| **Windows**   | `%APPDATA%\Brim\appState.json` |
-| **macOS**     | `$HOME/Library/Application Support/Brim/appState.json` | 
-| **Linux**     | `$HOME/.config/Brim/appState.json` | 
-
-This will clear some cached data from your previous use of Brim (e.g. the
-contents of the **History** panel), but the data for your Spaces will remain
-intact.
+Then to clear the condition, click **Window > Reset State** from the Brim
+pull-down menu. This will clear some cached data from your previous use of Brim
+(e.g. the contents of the **History** panel), but the data for your Spaces will
+remain intact.
 
 Before resuming normal work in Brim, this would be a good opportunity to
 retrace your steps and confirm that you've captured the reproduction steps
