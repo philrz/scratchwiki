@@ -31,7 +31,7 @@ detail.
 To start debugging such problems, it helps to understand how Brim opens flows
 extracted from pcaps. Once the 5-tuple, connection start time, and connection
 duration are isolated from the Zeek `conn` record for the flow, the
-[`zqd`](https://github.com/brimsec/zq/tree/master/ppl/cmd/zqd) process uses an
+[`zqd`](https://github.com/brimdata/zed/tree/main/ppl/cmd/zqd) process uses an
 index to extract the packets for the target flow into a temporary file. Once
 this temporary file has been written to the local filesystem, the application
 on your operating system that's configured to automatically open files ending
@@ -41,7 +41,7 @@ In typical environments, that application will be Wireshark. However, if no
 such application is installed or configured to open `.pcap` files, clicking the
 **Packets** button in Brim will have no effect. The lack of guidance in this
  case is currently lacking on macOS and Linux
-([brim/1379](https://github.com/brimsec/brim/issues/1379)).
+([brim/1379](https://github.com/brimdata/brim/issues/1379)).
 
 To fix this problem, ensure Wireshark or a similar utility is installed
 and that you can open `.pcap` files outside of Brim by double-clicking them
@@ -133,7 +133,7 @@ line (your timestamps will differ):
    ```
 
 Brim normally invokes steps similar to those shown above by making API calls
-to the [`zqd`](https://github.com/brimsec/zq/tree/master/ppl/cmd/zqd) process that
+to the [`zqd`](https://github.com/brimdata/zed/tree/main/ppl/cmd/zqd) process that
 is launched when Brim starts. Specifically, step #2 is performed when you import
 your pcap into Brim, then information from the generated Zeek `conn` records
 provide timestamps similar to those you gathered in step #3, and then the
@@ -204,7 +204,7 @@ Though we attempt to fix bad bugs in Brim soon after they're identified,
 occasionally you may encounter a new bug that crashes the app in a way that
 leaves it in a bad state. In these situations Brim will seem "stuck" each time
 it starts, either at at a blank white screen (such as in previously-fixed issue
-[#1099](https://github.com/brimsec/brim/issues/1099)) or showing an error dump
+[#1099](https://github.com/brimdata/brim/issues/1099)) or showing an error dump
 similar to the one below:
 
 ![Example crash from issue #652](media/Crash-652.png)
@@ -238,8 +238,21 @@ below help you get past the problem, it would be very helpful for you to still
 share the details with us so we can provide guidance to ensure other users
 avoid the problem in the future.
 
+There have been a couple reports from Windows users who experienced these
+symptoms after an upgrade to a newer Brim release. In each case the users
+ultimately resolved the problem via system reboot. We've unfortunately been
+unable to reproduce this problem or study a system "live" that's in this state
+to determine the root cause or why the reboot fixed it. An issue
+[brim/1490](https://github.com/brimdata/brim/issues/1490) is being kept open to
+track this specific case. Even though a reboot might be an effective fix for
+you also, your assistance would be much appreciated in still running
+through the troubleshooting steps below and gathering the debug information.
+If you ultimately find a reboot fixes the symptom for you, please add your logs
+and details to [brim/1490](https://github.com/brimdata/brim/issues/1490).
+In all other cases, please [open a new issue](#opening-an-issue).
+
 To begin troubleshooting this, it helps to understand the "backend" of Brim.
-One essential component is [`zqd`](https://github.com/brimsec/zq/tree/master/ppl/cmd/zqd),
+One essential component is [`zqd`](https://github.com/brimdata/zed/tree/main/ppl/cmd/zqd),
 a server-style process that manages the storage and querying of imported
 log/packet data. Operations in `zqd` are invoked via a
 [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer)
@@ -287,7 +300,7 @@ process from fully installing or starting. To narrow down if this is occurring,
 it may help to compare the current running state to that of a healthy
 installation.
 
-Once you're launched Brim and have observed the error message, check the
+Once you've launched Brim and have observed the error message, check the
 running processes on your system and compare to the outputs shown below as
 appropriate for your platform.
 
@@ -321,7 +334,7 @@ $ pstree
  | \--- 51973 phil /Applications/Brim.app/Contents/Frameworks/Brim Helper (Renderer).app/Contents/MacOS/Brim Helper (Renderer) --type=renderer --field-trial-handle=1718379636,14112076954270201284,13380727289785404389,131072 --enable-features=WebComponentsV0Enabled --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --app-path=/Applications/Brim.app/Contents/Resources/app --enable-experimental-web-platform-features --node-integration --no-sandbox --no-zygote --enable-remote-module --background-color=#fff --enable-spellcheck --enable-websql --disable-electron-site-instance-overrides --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --no-v8-untrusted-code-mitigations --shared-files
 ```
 
-If `zqd` is absent from these outputs, it's possibile that another process is
+If `zqd` is absent from these outputs, it's possible that another process is
 already running that's listening on TCP port 9867. To confirm this, completely
 exit Brim and run `netstat -an` and look for instances of `:9867`.
 
@@ -429,11 +442,11 @@ a link to it in your issue.
 
 # Opening an Issue
 
-Before/when [opening a new issue](https://github.com/brimsec/brim/issues/new/choose),
+Before/when [opening a new issue](https://github.com/brimdata/brim/issues/new/choose),
 you can help us out by doing the following:
 
 * Review the [common problems](#common-problems) above see if you're hitting one of those.
-* Browse the existing [open issues](https://github.com/brimsec/brim/issues?q=is%3Aissue+is%3Aopen). If you confirm you're hitting one of those, please add a comment to it rather than opening a new issue.
+* Browse the existing [open issues](https://github.com/brimdata/brim/issues?q=is%3Aissue+is%3Aopen). If you confirm you're hitting one of those, please add a comment to it rather than opening a new issue.
 * [Gather info](#gathering-info) that that may help in reproducing the issue and testing a fix, and attach it to your issue.
 * Feel free to chat with the team on the [public Slack](https://www.brimsecurity.com/join-slack/) before/after opening an issue.
 * When you open a new issue, its initial text will include a template with standard info that will almost always be needed. Please include detail for all areas of the template.

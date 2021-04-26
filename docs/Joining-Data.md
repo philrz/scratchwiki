@@ -26,8 +26,8 @@ discussing its limitations.
 # About Cookbooks
 
 Brim cookbooks provide an opportunity to "test drive" new/experimental
-features in the Brim application and related [zq](https://github.com/brimsec/zq)
-tools. They also walk through details of how Brim and zq tools function and
+features in the Brim application and related [Zed](https://github.com/brimdata/zed)
+tools. They also walk through details of how Brim and Zed tools function and
 therefore may inspire other creative configurations.
 
 All efforts are made to disclose known caveats and limitations that are
@@ -35,10 +35,10 @@ relevant to the configurations shown. However, due to the potential to
 encounter bugs in evolving functionality, it is recommended that you initially
 follow cookbooks in a non-production, lab-style setting. As such features
 become more complete and stable, cookbooks may be retired and replaced with
-regular [User Documentation](https://github.com/brimsec/brim/wiki#user-documentation).
+regular [User Documentation](https://github.com/brimdata/brim/wiki#user-documentation).
 
 Please report any bugs or usability issues you find when working with cookbooks
-by [opening an issue](https://github.com/brimsec/brim/wiki/Troubleshooting#opening-an-issue)
+by [opening an issue](https://github.com/brimdata/brim/wiki/Troubleshooting#opening-an-issue)
 or reaching out on the [Brim public Slack](https://www.brimsecurity.com/join-slack/).
 We'd also love to hear your success stories and variations, so please don't be
 shy!
@@ -66,8 +66,9 @@ confirm which other approaches to joining we should add next.
 usable from within Brim, the Brim app currently lacks mechanisms to easily
 reference diverse external data sources in the same Space. While these
 mechanisms are planned for future releases, the approach described in this
-cookbook instead leverages the zq tools outside of Brim with the end result
-being the creation of a [ZNG](https://github.com/brimsec/zq/tree/master/zng/docs)-format
+cookbook instead leverages the Zed tools outside of Brim with the end result
+being the creation of a
+[ZNG](https://github.com/brimdata/zed/tree/main/docs/formats/zng.md)-format
 log that can be imported into Brim if desired.
 
 # Prepping Tools & Test Data
@@ -197,13 +198,13 @@ the split, the multiple branches are _merged_ back into a single stream before
 `join` operates on them.
 
 The first argument to `join` is a Z
-[expression](https://github.com/brimsec/zq/blob/master/zql/docs/expressions/README.md)
+[expression](https://github.com/brimdata/zed/blob/main/docs/language/expressions)
 that references fields in the respective left/right data sources to determine
 if a pair of records from each should be joined. In this case, since the field
 we're joining on is named `uid` in both data sources, the simple expression
 `uid=uid` suffices. The next argument is a comma-separated list of field names
 or assignments, similar to how the
-[`cut`](https://github.com/brimsec/zq/tree/master/zql/docs/processors#cut)
+[`cut`](https://github.com/brimdata/zed/tree/main/docs/language/processors#cut)
 processor is used.
 
 To apply this using `zq`, we employ its `-P` option that allows us to specify
@@ -263,7 +264,7 @@ laid out in columns with headers. However, this did not occur with our joined
 ZNG data.
 
 To understand why, it helps to look at our two example `conn` records in
-[ZSON](https://github.com/brimsec/zq/blob/master/zng/docs/zson.md) format.
+[ZSON](https://github.com/brimdata/zed/blob/main/docs/formats/zson.md) format.
 
 ```
 $ zq -f zson 'id.orig_p=49885 or id.orig_p=54470' conn-plus-spl.zng
@@ -341,7 +342,8 @@ $ zq -f zson 'id.orig_p=49885 or id.orig_p=54470' conn-plus-spl.zng
 } (=5)
 ```
 
-The presence of the separate [Type Definitions](https://github.com/brimsec/zq/blob/master/zng/docs/zson.md#321-type-definitions)
+The presence of the separate
+[Type Definitions](https://github.com/brimdata/zed/blob/main/docs/formats/zson.md#321-type-definitions)
 `(=2)` and `(=5)` shows us how separate schemas were generated for the two
 record variations produced by the `join`: The ones that matched on `uid` (and
 hence contained the additional SPL-SPT fields) and the ones that didn't.
@@ -350,7 +352,7 @@ predicated on query results all falling under a single schema, since the
 headers need to reflect all fields expected in the output.
 
 Now that we're recognized this, we can make a small change to our Z to address
-it. By adding the [`fuse`](https://github.com/brimsec/zq/tree/master/zql/docs/processors#fuse)
+it. By adding the [`fuse`](https://github.com/brimdata/zed/tree/main/docs/language/processors#fuse)
 processor, we can ensure all the data is captured under a single, unified
 schema.
 
@@ -391,7 +393,7 @@ time-sorted log that can be exported into a single ZNG file via Brim's
 you'll see more instances of what we saw earlier with Type Definitions for
 different diverse schemas, in this case one per Zeek event type.
 
-Let's assume we've followed the [Zeek Customization](https://github.com/brimsec/brim/wiki/Zeek-Customization)
+Let's assume we've followed the [Zeek Customization](https://github.com/brimdata/brim/wiki/Zeek-Customization)
 article to point our Brim at a customized Zeek that includes the SPL-SPT
 package. After having imported our test pcap to Brim and extracted the ZNG as
 a file `results.zng`, let's look at a count of the different Zeek event types we
@@ -496,4 +498,4 @@ SSL::Invalid_Server_Cert 3
 
 If you have questions or feedback about this cookbook, we'd like to hear from
 you! Please join our [public Slack](https://www.brimsecurity.com/join-slack/) or
-[open an issue](https://github.com/brimsec/brim/wiki/Troubleshooting#opening-an-issue). Thanks!
+[open an issue](https://github.com/brimdata/brim/wiki/Troubleshooting#opening-an-issue). Thanks!

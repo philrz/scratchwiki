@@ -7,9 +7,9 @@
 
 **User Documentation**
 
-- [[Zeek JSON Import]]
 - [[Zeek Customization]]
 - [[Geolocation]]
+- [[Migration of Spaces]]
 
 **Cookbooks**
 
