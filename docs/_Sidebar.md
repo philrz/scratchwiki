@@ -10,6 +10,7 @@
 - [[Zeek Customization]]
 - [[Geolocation]]
 - [[Migration of Spaces]]
+- [Custom `brimcap load` Config](Custom-brimcap-load-Config)
 
 **Cookbooks**
 
