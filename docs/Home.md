@@ -15,6 +15,7 @@ effective use of the Brim desktop application and related tools.
 - [[Zeek Customization]]
 - [[Geolocation]]
 - [[Migration of Spaces]]
+- [[Custom brimcap load Config]]
 
 ## Cookbooks
 
