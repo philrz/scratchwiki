@@ -10,11 +10,11 @@
 - [[Zeek Customization]]
 - [[Geolocation]]
 - [[Migration of Spaces]]
-- [Custom `brimcap load` Config](Custom-brimcap-load-Config)
+- [Importing CSV, JSON, Parquet, and ZST](Importing-CSV-JSON-Parquet-and-ZST)
 
 **Cookbooks**
 
-- [[Remote zqd]]
+- [[Remote zed lake]]
 - [[Query Library Transfer]]
 - [[Joining Data]]
 
