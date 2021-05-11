@@ -9,8 +9,7 @@
 
 - [[Zeek Customization]]
 - [[Geolocation]]
-- [[Migration of Spaces]]
-<!-- markdown-link-check-disable -->
+- [[Migration of Spaces]]<!-- markdown-link-check-disable -->
 - [Importing CSV, JSON, Parquet, and ZST](Importing-CSV-JSON-Parquet-and-ZST)
 <!-- markdown-link-check-enable-->
 
