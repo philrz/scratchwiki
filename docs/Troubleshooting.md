@@ -29,7 +29,7 @@ detail.
 ### Application problems
 
 To start debugging such problems, it helps to understand how Brim opens flows
-extracted from pcaps. Once the [5-tuple](https://www.napatech.com/what-is-a-flow/), connection start time, and connection
+extracted from pcaps. Once the [5-tuple](https://ibrokethislink.com/whatever), connection start time, and connection
 duration are isolated from the Zeek `conn` record for the flow, the [`zed
 lake`](https://github.com/brimdata/zed/tree/main/cmd/zed/lake) process uses an
 index to extract the packets for the target flow into a temporary file. Once
