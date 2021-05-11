@@ -6,7 +6,7 @@ on:
       - '**.md'
   push:
     branches:
-      - main
+      - master
 
 jobs:
   markdown-link-check:
