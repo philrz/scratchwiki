@@ -26,4 +26,4 @@ jobs:
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
         url: https://github.com/philrz/scratchwiki/wiki
-        cmd_params: "--limit-redirections=2 --verbose --exclude https://github-cloud.s3.amazonaws.com --exclude https://user-images.githubusercontent.com/ --exclude # --timeout 300"
+        cmd_params: "--verbose --exclude https://github-cloud.s3.amazonaws.com --exclude https://user-images.githubusercontent.com/ --exclude # --limit-redirections=5 --timeout 300"
