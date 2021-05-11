@@ -26,4 +26,4 @@ jobs:
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
         url: https://github.com/philrz/scratchwiki/wiki
-        cmd_params: "--one-page-only --verbose --exclude https://github.com/philrz/scratchwiki/wiki# --timeout 300"
+        cmd_params: "--one-page-only --verbose --exclude scratchwiki/wiki# --timeout 300"
