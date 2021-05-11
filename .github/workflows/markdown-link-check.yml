@@ -19,11 +19,3 @@ jobs:
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
         config-file: .github/workflows/markdown-link-check-config.json
-#  deployed-wiki-check:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - name: check for broken links on deployed wiki
-#      uses: ruzickap/action-my-broken-link-checker@v2
-#      with:
-#        url: https://github.com/philrz/scratchwiki/wiki
-#        cmd_params: "--verbose --exclude=https://github-cloud.s3.amazonaws.com --exclude=https://user-images.githubusercontent.com/ --exclude=# --max-redirections=2 --timeout=300"
