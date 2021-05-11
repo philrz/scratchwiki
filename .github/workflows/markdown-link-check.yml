@@ -26,5 +26,5 @@ jobs:
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
         url: https://github.com/philrz/scratchwiki/wiki
-        cmd_params: --verbose --timeout 300
+        cmd_params: --one-page-only --verbose --timeout 300
 
