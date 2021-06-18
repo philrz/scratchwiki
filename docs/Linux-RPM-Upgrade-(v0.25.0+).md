@@ -35,3 +35,4 @@ and speak up, or [open an issue](https://github.com/brimdata/brim/wiki/Troublesh
 # Test
 
 Here is a link to the [[troubleshooting]] article.
+Here is a link to the [[Troubleshooting#large-files]] section.
