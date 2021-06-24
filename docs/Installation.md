@@ -20,7 +20,7 @@ binaries and saved user data are stored on each platform.
 Details are provided in each section below about when Brim may "auto-update" to
 newer releases and when manual upgrades are necessary. In all cases,
 updating to a newer version of the app will preserve your existing
-[user data](https://github.com/brimdata/brim/wiki/Filesystem-Paths#user-data-all-versions). As the way user data
+[user data](https://github.com/philrz/scratchwiki/wiki/Filesystem-Paths#user-data-all-versions). As the way user data
 is stored sometimes changes in newer releases, downgrades to older releases are
 _not_ currently supported.
 
@@ -28,7 +28,7 @@ For a walk through some typical operations in Brim to get started, watch the
 [Brim Demo video](https://www.youtube.com/watch?v=InT-7WZ5Y2Y).
 
 If you run into any problems, you may want to browse the
-[wiki articles](https://github.com/brimdata/brim/wiki), perhaps starting with
+[wiki articles](https://github.com/philrz/scratchwiki/wiki), perhaps starting with
 [[Troubleshooting]]. If you get stuck, [join our public Slack](https://www.brimsecurity.com/join-slack/)
 and we'll be happy to help.
 
