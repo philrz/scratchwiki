@@ -49,7 +49,7 @@ become more complete and stable, cookbooks may be retired and replaced with
 regular [User Documentation](https://github.com/philrz/scratchwiki/wiki#user-documentation).
 
 Please report any bugs or usability issues you find when working with cookbooks
-by [opening an issue](Troubleshooting#opening-an-issue)
+by [opening an issue](https://github.com/philrz/scratchwiki/wiki/Troubleshooting#opening-an-issue)
 or reaching out on the [Brim public Slack](https://www.brimsecurity.com/join-slack/).
 We'd also love to hear your success stories and variations, so please don't be
 shy!
@@ -404,7 +404,7 @@ time-sorted log that can be exported into a single ZNG file via Brim's
 you'll see more instances of what we saw earlier with Type Definitions for
 different diverse schemas, in this case one per Zeek event type.
 
-Let's assume we've followed the [Zeek Customization](Zeek-Customization)
+Let's assume we've followed the [Zeek Customization](https://github.com/philrz/scratchwiki/wiki/Zeek-Customization)
 article to point our Brim at a customized Zeek that includes the SPL-SPT
 package. After having imported our test pcap to Brim and extracted the ZNG as
 a file `results.zng`, let's look at a count of the different Zeek event types we

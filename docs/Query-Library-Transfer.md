@@ -33,7 +33,7 @@ become more complete and stable, cookbooks may be retired and replaced with
 regular [User Documentation](https://github.com/philrz/scratchwiki/wiki#user-documentation).
 
 Please report any bugs or usability issues you find when working with cookbooks
-by [opening an issue](Troubleshooting#opening-an-issue)
+by [opening an issue](https://github.com/philrz/scratchwiki/wiki/Troubleshooting#opening-an-issue)
 or reaching out on the [Brim public Slack](https://www.brimsecurity.com/join-slack/).
 We'd also love to hear your success stories and variations, so please don't be
 shy!
@@ -49,7 +49,7 @@ add/delete of entries.
 # Background: `appState.json`
 
 Brim maintains persistent user configuration in a file `appState.json` which
-is located in Brim's [user data](Filesystem-Paths#user-data-all-versions)
+is located in Brim's [user data](https://github.com/philrz/scratchwiki/wiki/Filesystem-Paths#user-data-all-versions)
 path.
 
 If we peek inside it with a [JSON browser](http://jsonviewer.stack.hu/) or a
