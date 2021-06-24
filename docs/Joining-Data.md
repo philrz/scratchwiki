@@ -46,7 +46,7 @@ relevant to the configurations shown. However, due to the potential to
 encounter bugs in evolving functionality, it is recommended that you initially
 follow cookbooks in a non-production, lab-style setting. As such features
 become more complete and stable, cookbooks may be retired and replaced with
-regular [User Documentation](https://github.com/philrz/scratchwiki/wiki#user-documentation).
+regular [User Documentation](wiki#user-documentation).
 
 Please report any bugs or usability issues you find when working with cookbooks
 by [opening an issue](https://github.com/philrz/scratchwiki/wiki/Troubleshooting#opening-an-issue)
