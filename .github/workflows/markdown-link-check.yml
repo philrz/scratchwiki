@@ -3,6 +3,7 @@ name: Markdown link check
 on:
   pull_request:
     paths:
+      - ! ''docs/**'
       - '**.md'
   push:
     branches:
