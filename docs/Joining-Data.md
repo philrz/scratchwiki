@@ -1,15 +1,8 @@
 # Joining Data (v0.24.0 and older)
 
 > **Note:** The details in this article are specific to Brim release `v0.24.0`
-> and older. Data joins are possible in Brim release `v0.25.0` and newer, but
-> the Zed language and data storage have changed significantly. In brief,
-> joins in `v0.25.0` joins can be performed between multiple Pools in a
-> [Zed Lake](https://github.com/brimdata/zed/blob/main/docs/lake/design.md)
-> from outside of Brim, with the joined data pushed back into a Pool for
-> further querying from inside Brim. Until updated documentation has been
-> completed, [this zed/2482 comment](https://github.com/brimdata/zed/issues/2482#issuecomment-850531562)
-> provides some preliminary `join` examples in the current Zed syntax that's
-> used with Brim `v0.25.0`.
+> and older. For information regarding release `v0.25.0` and newer, review
+> [this article](https://github.com/brimdata/brim/wiki/Joining-Data-%28v0.25.0-%29).
 
 - [Summary](#summary)
 - [About Cookbooks](#about-cookbooks)
@@ -46,10 +39,10 @@ relevant to the configurations shown. However, due to the potential to
 encounter bugs in evolving functionality, it is recommended that you initially
 follow cookbooks in a non-production, lab-style setting. As such features
 become more complete and stable, cookbooks may be retired and replaced with
-regular [User Documentation](https://github.com/philrz/scratchwiki/wiki#user-documentation).
+regular [User Documentation](https://github.com/brimdata/brim/wiki#user-documentation).
 
 Please report any bugs or usability issues you find when working with cookbooks
-by [opening an issue](https://github.com/philrz/scratchwiki/wiki/Troubleshooting#opening-an-issue)
+by [opening an issue](https://github.com/brimdata/brim/wiki/Troubleshooting#opening-an-issue)
 or reaching out on the [Brim public Slack](https://www.brimsecurity.com/join-slack/).
 We'd also love to hear your success stories and variations, so please don't be
 shy!
@@ -404,7 +397,7 @@ time-sorted log that can be exported into a single ZNG file via Brim's
 you'll see more instances of what we saw earlier with Type Definitions for
 different diverse schemas, in this case one per Zeek event type.
 
-Let's assume we've followed the [Zeek Customization](https://github.com/philrz/scratchwiki/wiki/Zeek-Customization)
+Let's assume we've followed the [Zeek Customization](https://github.com/brimdata/brim/wiki/Zeek-Customization)
 article to point our Brim at a customized Zeek that includes the SPL-SPT
 package. After having imported our test pcap to Brim and extracted the ZNG as
 a file `results.zng`, let's look at a count of the different Zeek event types we
@@ -509,4 +502,4 @@ SSL::Invalid_Server_Cert 3
 
 If you have questions or feedback about this cookbook, we'd like to hear from
 you! Please join our [public Slack](https://www.brimsecurity.com/join-slack/) or
-[open an issue](https://github.com/philrz/scratchwiki/wiki/Troubleshooting#opening-an-issue). Thanks!
+[open an issue](https://github.com/brimdata/brim/wiki/Troubleshooting#opening-an-issue). Thanks!
