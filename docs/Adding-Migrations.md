@@ -38,7 +38,7 @@ rm -fr run
 # Check out the last version
 git checkout v0.13.1
 # Start the app
-npm install && npm start
+yarn && yarn start
 ```
 
 Now get the app into a state that you want to test against. In this example, we would add a few connections so we can ensure they have nicknames after the migration.
@@ -62,7 +62,7 @@ Then in the migration test file, you can access this file using the helper funct
 ```js
 // src/js/state/migrations/202007101024_addNicknameToConnection.test.js
 
-import getTestState from "../../test/helpers/getTestState"
+import getTestState from "src/test/helpers/getTestState"
 import migrate from "./202007101024_addNicknameToConnection"
 
 test("202007101024_addNicknameToConnection", () => {
