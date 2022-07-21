@@ -1,0 +1,16 @@
+name: check for broken links on docs site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    steps:
+    - name: check for broken links
+      uses: ruzickap/action-my-broken-link-checker@v2
+      with:
+        url: https://zed.brimdata.io
+        cmd_params: --verbose
