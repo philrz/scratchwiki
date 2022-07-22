@@ -14,4 +14,4 @@ jobs:
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
         url: https://zed.brimdata.io
-        cmd_params: --verbose --buffer-size=8192 --exclude algolia.net --exclude www.googletagmanager.com
+        cmd_params: --buffer-size=8192 --exclude algolia.net --exclude www.googletagmanager.com # --verbose
