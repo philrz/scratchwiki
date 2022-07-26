@@ -13,5 +13,5 @@ jobs:
     - name: check for broken links
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
-        url: https://philrz.github.io
+        url: https://zed.brimdata.io/
         cmd_params: --buffer-size=8192 --header="Accept-Encoding:zstd,br,gzip,deflate" --exclude algolia.net --exclude www.googletagmanager.com # --verbose
