@@ -13,10 +13,18 @@ jobs:
     - name: check for broken links
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
-        url: https://www.brimdata.io
-        cmd_params: --verbose --exclude linkedin.com --exclude mixpanel.com --exclude twitter.com --exclude ^https://github.com/brimdata/zed/tree/main/docs/language/.*# --timeout 300
+        url: https://philrz.github.io
+        cmd_params: --buffer-size=8192 --header="Accept-Encoding:zstd,br,gzip,deflate" --exclude algolia.net --exclude www.googletagmanager.com # --verbose
 
-# For docs site
+# For docs production site
 #
 #        url: https://zed.brimdata.io
 #        cmd_params: --buffer-size=8192 --header="Accept-Encoding:zstd,br,gzip,deflate" --exclude algolia.net --exclude www.googletagmanager.com # --verbose
+#
+# For docs test site
+#        url: https://philrz.github.io
+#        cmd_params: --buffer-size=8192 --header="Accept-Encoding:zstd,br,gzip,deflate" --exclude algolia.net --exclude www.googletagmanager.com # --verbose
+#
+# For brimdata.io
+#        url: https://www.brimdata.io
+#        cmd_params: --verbose --exclude linkedin.com --exclude mixpanel.com --exclude twitter.com --exclude ^https://github.com/brimdata/zed/tree/main/docs/language/.*# --timeout 300
