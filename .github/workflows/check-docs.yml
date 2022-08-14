@@ -15,7 +15,8 @@ jobs:
       with:
         url: https://www.brimdata.io
         cmd_params: --verbose
-                    --max-response-body-size=1000000000
+                    --timeout 30
+                    --max-response-body-size 1000000000
                     --exclude linkedin.com
                     --exclude mixpanel.com
                     --exclude twitter.com
