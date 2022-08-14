@@ -16,6 +16,7 @@ jobs:
         url: https://www.brimdata.io
         cmd_params: --verbose
                     --timeout 300
+                    --buffer-size 8192
                     --max-response-body-size 1000000000
                     --exclude https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf
                     --exclude https://github.com/edgedb/edgedb#-types-not-tables-
