@@ -24,7 +24,8 @@ jobs:
                     --exclude ^https://github.com/brimdata/brim/releases/download.*
                     --exclude ^https://github.com/brimdata/zed/releases/download.*
                     --exclude https://github.com/brimdata/zed#zed--
-                    --exclude ^https://github.com/brimdata/zed/tree/main/docs/language/.*
+
+#                    --exclude ^https://github.com/brimdata/zed/tree/main/docs/language/.*
 
 # For docs production site
 #
