@@ -14,7 +14,16 @@ jobs:
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
         url: https://www.brimdata.io
-        cmd_params: "--verbose --timeout 300 --buffer-size 8192 --max-response-body-size 1000000000  --header 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36' --header 'accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'accept-encoding:gzip, deflate, sdch, br' --exclude mixpanel.com --exclude https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf --exclude https://github.com/edgedb/edgedb#-types-not-tables- --exclude https://github.com/brimdata/zed#zed--"
+        cmd_params:
+           --verbose
+           --timeout 300
+           --buffer-size 8192
+           --max-response-body-size 1000000000
+           --exclude mixpanel.com
+           --exclude linkedin.com
+           --exclude https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf
+           --exclude https://github.com/edgedb/edgedb#-types-not-tables-
+           --exclude https://github.com/brimdata/zed#zed--
 
 #                    --exclude ^https://github.com/brimdata/zed/tree/main/docs/language/.*
 #                    --exclude ^https://github.com/brimdata/brim/releases/download.*
