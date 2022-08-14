@@ -14,7 +14,7 @@ jobs:
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
         url: https://www.brimdata.io
-        cmd_params: --verbose --exclude linkedin.com --exclude mixpanel.com --exclude twitter.com --exclude ^https://github.com/brimdata/zed/tree/main/docs/language/.*# --timeout 300
+        cmd_params: --verbose --exclude linkedin.com --exclude mixpanel.com --exclude twitter.com --exclude ^https://github.com/brimdata/zed/tree/main/docs/language/.* --exclude https://github.com/edgedb/edgedb#-types-not-tables-  # --timeout 300
 
 # For docs production site
 #
