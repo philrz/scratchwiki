@@ -14,7 +14,15 @@ jobs:
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
         url: https://capable-khapse-fa9d06.netlify.app
-        cmd_params: --buffer-size=8192 --header="Accept-Encoding:zstd,br,gzip,deflate" --exclude algolia.net --exclude www.googletagmanager.com # --verbose
+        cmd_params:
+          --verbose
+          --timeout 300
+          --buffer-size 8192
+          --max-response-body-size 1000000000
+          --exclude mixpanel.com
+          --exclude linkedin.com
+          --exclude https://github.com/edgedb/edgedb#-types-not-tables-
+          --exclude https://github.com/brimdata/zed#zed--
 
 #        url: https://spiffy-gnome-8f2834.netlify.app
 
