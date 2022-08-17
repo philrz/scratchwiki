@@ -13,7 +13,7 @@ jobs:
     - name: check for broken links
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
-        url: https://spiffy-gnome-8f2834.netlify.app
+        url: https://capable-khapse-fa9d06.netlify.app
         cmd_params: --buffer-size=8192 --header="Accept-Encoding:zstd,br,gzip,deflate" --exclude algolia.net --exclude www.googletagmanager.com # --verbose
 
 #        url: https://spiffy-gnome-8f2834.netlify.app
