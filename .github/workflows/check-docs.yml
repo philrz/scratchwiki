@@ -22,6 +22,7 @@ jobs:
           --header="Accept-Encoding:zstd,br,gzip,deflate"
           --exclude algolia.net
           --exclude www.googletagmanager.com
+          --exclude https://support.virustotal.com/hc/en-us/articles/115002146769-Comments
           --exclude https://github.com/brimdata/brimcap#
           --exclude https://github.com/brimdata/build-suricata.*#
           --exclude https://github.com/brimdata/brimcap/wiki.*#
