@@ -18,7 +18,7 @@ jobs:
           --verbose
           --buffer-size=8192
           --max-response-body-size 1000000000
-          --header="User-Agent: Mozilla/5.0"
+          --header="User-Agent:Mozilla/5.0"
           --header="Accept-Encoding:zstd,br,gzip,deflate"
           --exclude algolia.net
           --exclude www.googletagmanager.com
