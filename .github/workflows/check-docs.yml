@@ -13,18 +13,18 @@ jobs:
     - name: check for broken links
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
-        url: https://capable-khapse-fa9d06.netlify.app
+        url: https://zui.brimdata.io
         cmd_params:
           --verbose
-          --timeout 300
-          --buffer-size 8192
+          --buffer-size=8192
           --max-response-body-size 1000000000
-          --exclude mixpanel.com
-          --exclude linkedin.com
-          --exclude https://github.com/edgedb/edgedb#-types-not-tables-
-          --exclude https://github.com/brimdata/zed#zed--
-
-#        url: https://spiffy-gnome-8f2834.netlify.app
+          --header="User-Agent: Mozilla/5.0"
+          --header="Accept-Encoding:zstd,br,gzip,deflate"
+          --exclude algolia.net
+          --exclude www.googletagmanager.com
+          --exclude https://github.com/brimdata/brimcap#
+          --exclude https://github.com/brimdata/build-suricata.*#
+          --exclude https://github.com/brimdata/brimcap/wiki.*#
 
 # For docs production site
 #
