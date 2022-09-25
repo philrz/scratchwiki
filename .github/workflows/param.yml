@@ -1,0 +1,16 @@
+name: Use a parameter
+
+on:
+  workflow_dispatch:
+    inputs:
+      zui-branch:
+        description: 'Zui branch on which to base this Zui Insiders build'
+        default: 'main'
+        required: false
+
+jobs:
+  output:
+    runs-on: ubuntu-latest
+    steps:
+    - name: check for broken links
+      run: echo "I'd checkout ${{ github.events.input.zui-branch }}"
