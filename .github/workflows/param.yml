@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Output my param
-      run: echo "I'd checkout ${{ github.events.inputs.zui-branch }}"
+      run: echo "I'd checkout ${{ github.event.inputs.zui-branch }}"
