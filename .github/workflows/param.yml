@@ -12,5 +12,5 @@ jobs:
   output:
     runs-on: ubuntu-latest
     steps:
-    - name: check for broken links
+    - name: Output my param
       run: echo "I'd checkout ${{ github.events.inputs.zui-branch }}"
