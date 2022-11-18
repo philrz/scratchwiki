@@ -20,6 +20,7 @@ jobs:
           --header="Accept-Encoding:zstd,br,gzip,deflate"
           --exclude algolia.net
           --exclude www.googletagmanager.com
+          --exclude github.com\/brimdata\/.*\/edit\/
 
 # For docs production site
 #
