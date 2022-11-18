@@ -13,19 +13,13 @@ jobs:
     - name: check for broken links
       uses: ruzickap/action-my-broken-link-checker@v2
       with:
-        url: https://zui.brimdata.io
+        url: https://spiffy-gnome-8f2834.netlify.app
         cmd_params:
           --verbose
           --buffer-size=8192
-          --max-response-body-size 1000000000
-          --header="User-Agent:Mozilla/5.0"
           --header="Accept-Encoding:zstd,br,gzip,deflate"
           --exclude algolia.net
           --exclude www.googletagmanager.com
-          --exclude https://support.virustotal.com/hc/en-us/articles/115002146769-Comments
-          --exclude https://github.com/brimdata/brimcap#
-          --exclude https://github.com/brimdata/build-suricata.*#
-          --exclude https://github.com/brimdata/brimcap/wiki.*#
 
 # For docs production site
 #
